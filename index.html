@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date Invitation</title>
+  <style>
+    /* CSS for index.html */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: pink;
+      position: relative;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      margin-top: 20px;
+      text-align: center;
+      display: flex;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      font-size: 1em;
+      background-color: pink;
+      color: black;
+      border: 2px solid pink;
+      display: inline-block;
+      
+    }
+
+    .buttons button:hover {
+      background-color: black;
+      color: pink;
+    }
+
+    #noButton {
+      background-color: pink;
+      color: black;
+      border: 2px solid pink;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #yesButton {
+      background-color: pink;
+      color: black;
+      border: 2px solid pink;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Will you go on a date with me?</h1>
+    </header>
+    <main>
+      <img src="don’t-make-me-beg.gif" alt="Date Invitation Image">
+      <div class="buttons">
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // JavaScript code for No button movement and Yes button redirection
+    document.addEventListener('DOMContentLoaded', function() {
+      const noButton = document.getElementById('noButton');
+      const yesButton = document.getElementById('yesButton');
+
+      function moveButton(event) {
+        const buttonWidth = event.target.offsetWidth;
+        const buttonHeight = event.target.offsetHeight;
+        const maxX = window.innerWidth - buttonWidth;
+        const maxY = window.innerHeight - buttonHeight;
+
+        const newX = Math.floor(Math.random() * maxX);
+        const newY = Math.floor(Math.random() * maxY);
+
+        // Ensure the button stays within the viewport
+        const clampedX = Math.max(0, Math.min(newX, maxX));
+        const clampedY = Math.max(0, Math.min(newY, maxY));
+
+        event.target.style.left = `${clampedX}px`;
+        event.target.style.top = `${clampedY}px`;
+      }
+
+      noButton.addEventListener('click', function(event) {
+        moveButton(event);
+      });
+
+      yesButton.addEventListener('click', function() {
+        window.location.href = 'newpage.html';
+      });
+    });
+  </script>
+</body>
+</html>

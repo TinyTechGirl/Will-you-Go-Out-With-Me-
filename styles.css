@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: pink;
+    position: relative;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+  
+  .buttons {
+    position: relative; /* Ensure buttons are positioned relative to their container */
+    margin-top: 20px;
+    text-align: center; /* Align the buttons to the center */
+  }
+
+  .buttons button {
+    padding: 10px 20px;
+    margin: 0 5px; /* Adjust margin to create space between buttons */
+    font-size: 1em;
+    background-color: pink;
+    color: black;
+    border: 2px solid pink;
+    display: inline-block; /* Display buttons in a line */
+  }
+  
+  
+  .buttons button:hover {
+    background-color: black;
+    color: pink;
+  }
+
+  #noButton {
+    background-color: pink;
+    color: black;
+    border: 2px solid pink;
+
+  }
+  
+  .new-page {
+    background-color: pink;
+    color: black;
+  }
+  
+  .new-page h1 {
+    font-size: 3em;
+  }
+  
